@@ -886,6 +886,9 @@ class SlimeVolleySurvivalAtariEnv(SlimeVolleyEnv):
   atari_mode = True
   survival_bonus = True
 
+class SlimeVolleyDiscreteEnv(SlimeVolleyEnv):
+  atari_mode = True
+
 class SurvivalRewardEnv(gym.RewardWrapper):
   def __init__(self, env):
     """
@@ -1015,6 +1018,11 @@ register(
 register(
     id='SlimeVolleySurvivalNoFrameskip-v0',
     entry_point='slimevolleygym.slimevolley:SlimeVolleySurvivalAtariEnv'
+)
+
+register(
+    id='SlimeVolleyDiscrete-v0',
+    entry_point='slimevolleygym.slimevolley:SlimeVolleyDiscreteEnv'
 )
 
 if __name__=="__main__":
